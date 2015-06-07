@@ -9,7 +9,5 @@ config :hello_world, HelloWorld.Endpoint,
 # Configure your database
 config :hello_world, HelloWorld.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
-  database: "hello_world_prod",
+  url: System.get_env("DATABASE_URL"),
   size: 20 # The amount of database connections in the pool
