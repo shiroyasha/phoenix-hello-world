@@ -1,0 +1,11 @@
+<%= link "Register", class: "btn btn-primary", to: user_path(@conn, :new) %>
+
+<ul class="userList">
+  <%= for user <- @users do %>
+    <li>
+      <div><%= gravatar_avatar(user.email) %></div>
+      <p><%= link user.name, to: user_path(@conn, :show, user) %></p>
+    </li>
+  <% end %>
+</ul>
+
