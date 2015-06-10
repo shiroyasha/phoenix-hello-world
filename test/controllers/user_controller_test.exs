@@ -2,17 +2,12 @@ defmodule HelloWorld.UserControllerTest do
   use HelloWorld.ConnCase
 
   alias HelloWorld.User
-  @valid_attrs %{bio: "some content", email: "some content", name: "some content"}
+  @valid_attrs %{bio: "some content", email: "igor@gmail.com", name: "some content"}
   @invalid_attrs %{}
 
   setup do
     conn = conn()
     {:ok, conn: conn}
-  end
-
-  test "lists all entries on index", %{conn: conn} do
-    conn = get conn, user_path(conn, :index)
-    assert html_response(conn, 200) =~ "Listing users"
   end
 
   test "renders form for new resources", %{conn: conn} do
